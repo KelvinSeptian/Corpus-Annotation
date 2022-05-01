@@ -20,7 +20,7 @@ header {
 .left {
   display: flex;
   flex-direction: column;
-  
+
 }
 
 .video {
@@ -39,8 +39,13 @@ header {
 }
 
 @keyframes hover {
-  from { background-color: aliceblue; }
-  to { background-color: aqua; }
+  from {
+    background-color: aliceblue;
+  }
+
+  to {
+    background-color: aqua;
+  }
 }
 
 .upload-video-label {

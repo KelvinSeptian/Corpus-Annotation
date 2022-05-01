@@ -1,0 +1,187 @@
+WEBVTT
+
+00:01.570 --> 00:05.098
+Voiceactivated applications have become more and more common in our daily
+
+00:05.134 --> 00:08.758
+lives. Less than two decades ago, a computer understanding
+
+00:08.794 --> 00:12.378
+human language was only possible in the realm of science fiction. Now the
+
+00:12.404 --> 00:15.898
+technology is integrated into our everyday lives through through the voice assistants
+
+00:15.934 --> 00:19.278
+in our phones and more recently, our homes. But how does it
+
+00:19.304 --> 00:22.810
+work? How are the sounds that you a naked, two legged monkey
+
+00:22.870 --> 00:26.430
+producing your fleshy voice box, understood by essentially a very
+
+00:26.480 --> 00:29.730
+fancy rock, we forced to do math. The first
+
+00:29.780 --> 00:33.262
+challenge we face is the fact that sound is analog, whereas computers
+
+00:33.286 --> 00:37.090
+can only understand digital input. So we use a microphone.
+
+00:37.210 --> 00:41.098
+A microphone is basically just a small magnet wrapped in a coil of wire.
+
+00:41.194 --> 00:45.466
+When it vibrates, it creates an electric current in the wire. By electromagnetic induction,
+
+00:45.598 --> 00:49.580
+the amplitudes are converted into voltage, which can be read via a computer.
+
+00:50.090 --> 00:53.334
+From this input, individual frequencies are isolated using
+
+00:53.372 --> 00:56.542
+an FTT. The result can be represented as a spectrogram,
+
+00:56.626 --> 01:00.282
+which looks like this with time on the X axis, frequencies on
+
+01:00.296 --> 01:04.122
+the y axis, and brightness showing the intensity. Every language has
+
+01:04.136 --> 01:07.662
+a phonetic library consisting of the sounds that are used in its speech, which are
+
+01:07.676 --> 01:11.542
+the most basic building blocks from which words can be made. They are called phonemes,
+
+01:11.566 --> 01:15.138
+and spectrograms allow us to identify them. This is an O,
+
+01:15.224 --> 01:18.682
+and this is a K. During its early stages,
+
+01:18.766 --> 01:22.762
+most phoning recognition was done statistically, for example, using the hidden markup
+
+01:22.786 --> 01:26.434
+model, which is an algorithm consisting of States and corresponding evidence.
+
+01:26.542 --> 01:29.842
+This approach is unable to adapt to large phony variation,
+
+01:29.926 --> 01:33.210
+however, as every phony must be predefined as human
+
+01:33.260 --> 01:36.178
+speech varies greatly due to accents and mispronunciation,
+
+01:36.274 --> 01:39.618
+neural networks were introduced as an alternative. You may
+
+01:39.644 --> 01:43.362
+have already heard about neural networks being a kind of machine learning.
+
+01:43.436 --> 01:46.674
+Neural networks are capable of continuously improving themselves within
+
+01:46.712 --> 01:50.394
+PETA. A neural network consists of interconnected nodes, with each
+
+01:50.432 --> 01:53.838
+connection having a weight, a number that determines the signal between two
+
+01:53.864 --> 01:57.318
+of these nodes. These nodes are typically organized in
+
+01:57.344 --> 02:00.858
+layers that consist of an input and an output layer, in addition to
+
+02:00.884 --> 02:03.738
+hidden layers that perform transformations on the data.
+
+02:03.884 --> 02:07.854
+Every time he gets feedback and the neural network learns, it adjusts these
+
+02:07.892 --> 02:11.218
+weights. However, neural networks, unlike hidden Markov models,
+
+02:11.254 --> 02:14.502
+are very data hungry and require a lot of it to be set up.
+
+02:14.636 --> 02:19.290
+As such, Markov models are still used, often in combination with neural networks.
+
+02:19.730 --> 02:23.526
+Once the sounds are identified, the system can begin to analyze words.
+
+02:23.648 --> 02:27.094
+The identified phonemes are then processed by what is called a language
+
+02:27.142 --> 02:30.538
+model. It analyzes how likely it is for any given phoneme
+
+02:30.574 --> 02:34.234
+to appear after another. For example, in English, the phoneme
+
+02:34.282 --> 02:38.230
+M never precedes an S. It then analyzes if the output
+
+02:38.290 --> 02:42.138
+consists of words in its dictionary. If a phoneme combination is
+
+02:42.164 --> 02:45.858
+highly unlikely by either standard, a different word with similar phonemes is
+
+02:45.884 --> 02:49.282
+chosen. Once it has identified which words are in a sentence.
+
+02:49.366 --> 02:52.866
+It conducts a syntactic analysis of the phrase to see if it actually
+
+02:52.928 --> 02:56.278
+makes sense. It investigates the word order in accordance with grammar
+
+02:56.314 --> 03:00.022
+rules utilizing what is known as a passing tree. A passing tree
+
+03:00.046 --> 03:03.826
+is a technique by which a sentence is broken down into smaller and smaller parts
+
+03:03.898 --> 03:07.426
+until only elementary words remain and the sentence is valid.
+
+03:07.618 --> 03:11.806
+If there are any red flags and they very often are the program backtracks
+
+03:11.818 --> 03:15.390
+to the phonemes, it recognized and reassesses which words are formed using
+
+03:15.440 --> 03:18.982
+similar phonemes. Once there are minimal inconsistencies,
+
+03:19.066 --> 03:22.398
+the final output is at last given. As you can see,
+
+03:22.484 --> 03:26.058
+our voice has to go through many distinct steps before a computer can determine what
+
+03:26.084 --> 03:29.634
+we said. First, a microphone has to convert our speech into
+
+03:29.672 --> 03:33.582
+digital input which a computer then attempts to classify into recognizable sounds
+
+03:33.656 --> 03:36.430
+with the help of statistical models and neural networks.
+
+03:36.550 --> 03:39.630
+Words and phrases are then picked out by analyzing these sounds until
+
+03:39.680 --> 03:42.858
+our input is determined. Now the computer just
+
+03:42.884 --> 03:46.200
+needs to be able to act on it. But that's the story for another day.

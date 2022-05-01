@@ -1,17 +1,58 @@
-const axios = require("axios"); 
+const BASE_URL = 'http:/localhost:8000'
 
-const assembly = axios.create({
-  baseURL: "https://api.assemblyai.com/v2",
-  headers: {
-    authorization: "4f8bd8e07b574fbcbac6ee4b13fb4458",
-    "content-type": "application/json",
-    "transfer-encoding": "chunked",
-  },
-});
+export const sendVideo = async (data) => {
+  console.log(data)
+  let response = await fetch('http://localhost:8000/send-file', {
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+    },
+    method: "POST",
+    body: JSON.stringify({ data: data })
+  })
+  .then(res => res.json())
+  .catch(function (error) {
+    console.log(error);
+  });
+  
+  return await response;
+};
 
-export const uploadFile = (file) => {
-    assembly
-      .post("/upload", file)
-      .then((res) => console.log(res.data))
-      .catch((err) => console.error(err));
+export const retrieveTranscript = async (id) => {
+  console.log(id);
+
+  let response = await fetch(`http://localhost:8000/retrieve-transcript/${id}`, {
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+    },
+    method: "GET"
+  })
+  .then(res => res.json())
+  .catch(function (error) {
+    console.log(error);
+  });
+
+  return await response
+};
+
+export const retrieveVTT = async (id) => {
+  let response = await fetch(`http://localhost:8000/retrieve-vtt/${id}`,
+    {
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      method: "GET",
+    })
+    .then(res => {
+      return res.json()
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+
+  console.log(response);
+
+  return await response;
 }
