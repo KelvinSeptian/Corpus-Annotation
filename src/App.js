@@ -4,6 +4,8 @@ import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import './App.css';
 
+import { uploadFile } from './API';
+
 function App() {
   const [video, setVideo] = useState();
   const [annotations, setAnnotations] = useState([]);
@@ -20,6 +22,7 @@ function App() {
     reader.readAsDataURL(file);
     reader.onload = function () {
       setVideo(reader.result);
+      uploadFile(reader.result);
     };
   }
 
